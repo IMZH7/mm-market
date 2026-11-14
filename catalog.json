@@ -1,0 +1,238 @@
+{
+ "shop": {
+  "title": "Каталог MM Market",
+  "subtitle": "Выбирайте и пишите нашему менеджеру для покупки",
+  "contact": "ZHELEEZ",
+  "currency": "₽"
+ },
+ "updatedAt": "2026-11-14T10:32:25Z",
+ "products": [
+  {
+   "id": "CA017EE5-7047-4A4F-B3C3-C378BA6CEF42",
+   "name": "canada goose куртка",
+   "price": 3000,
+   "qty": 0,
+   "sizes": [
+    {
+     "label": "S",
+     "qty": null
+    },
+    {
+     "label": "M",
+     "qty": null
+    },
+    {
+     "label": "L",
+     "qty": null
+    },
+    {
+     "label": "XL",
+     "qty": null
+    }
+   ],
+   "details": "",
+   "photo": "photos/1A2F91A8-DC2E-49AE-A766-EB64452E065F.jpg",
+   "restock": null,
+   "createdAt": "2026-10-25T14:37:44Z"
+  },
+  {
+   "id": "4CB81801-E1A2-4226-B20E-A059BCEEB90E",
+   "name": "cp company куртка",
+   "price": 3600,
+   "qty": 0,
+   "sizes": [],
+   "details": "",
+   "photo": "photos/CBCAFE8D-17E7-436C-ABD7-1E3CF875C4FC.jpg",
+   "restock": null,
+   "createdAt": "2026-10-25T14:40:49Z"
+  },
+  {
+   "id": "9D7ADDC5-5DAA-42B9-A37D-7BE0C4532027",
+   "name": "cp company куртка",
+   "price": 3600,
+   "qty": 0,
+   "sizes": [],
+   "details": "",
+   "photo": "photos/F0047A61-115F-412C-ACD7-BF6F42DD29A7.jpg",
+   "restock": null,
+   "createdAt": "2026-10-25T14:43:57Z"
+  },
+  {
+   "id": "03706378-A345-4912-8C98-ABF741B80288",
+   "name": "LV браслет",
+   "price": 1800,
+   "qty": 9,
+   "sizes": [],
+   "details": "",
+   "photo": "photos/9FF3A176-D018-48FF-9B1E-120C1C8D0686.jpg",
+   "restock": null,
+   "createdAt": "2026-10-25T14:53:01Z"
+  },
+  {
+   "id": "D96A429A-6019-4AC3-907A-E801542EE963",
+   "name": "Valentino браслет",
+   "price": 1800,
+   "qty": 3,
+   "sizes": [],
+   "details": "",
+   "photo": "photos/8B0B9E57-A5FE-4AEF-ABF7-7FCB56E8599F.jpg",
+   "restock": null,
+   "createdAt": "2026-10-25T14:54:33Z"
+  },
+  {
+   "id": "8F41D848-86B4-4E79-8887-AE29157CEAF1",
+   "name": "Canada Goose куртка",
+   "price": 3400,
+   "qty": 0,
+   "sizes": [],
+   "details": "",
+   "photo": "photos/36264B92-4E06-4AEB-B7D6-65345397D752.jpg",
+   "restock": null,
+   "createdAt": "2026-10-25T15:02:10Z"
+  },
+  {
+   "id": "74DCA58F-3C45-4DE7-A374-3FE0ABF4D59C",
+   "name": "поло Carteiz",
+   "price": 3500,
+   "qty": 1,
+   "sizes": [],
+   "details": "",
+   "photo": "photos/71157C49-4E00-4751-AC37-43C28E1C4B53.jpg",
+   "restock": null,
+   "createdAt": "2026-10-29T15:35:17Z"
+  },
+  {
+   "id": "28BE675B-615E-4E97-82CF-A850F5ABB5C3",
+   "name": "футболка Carteiz",
+   "price": 900,
+   "qty": 1,
+   "sizes": [],
+   "details": "",
+   "photo": "photos/45C0FC87-A488-4438-BE39-71200CDD5800.jpg",
+   "restock": null,
+   "createdAt": "2026-10-29T15:37:09Z"
+  },
+  {
+   "id": "28D94E3E-85A0-4309-94B5-BC5D582C0E3B",
+   "name": "футболка Carteiz",
+   "price": 900,
+   "qty": 1,
+   "sizes": [],
+   "details": "",
+   "photo": "photos/6A0D0CE8-DE45-4040-83DD-B722921FE8DD.jpg",
+   "restock": null,
+   "createdAt": "2026-10-29T15:38:23Z"
+  },
+  {
+   "id": "8F4A10DB-8867-424A-8856-CE30245BB504",
+   "name": "футболка Carteiz",
+   "price": 900,
+   "qty": 1,
+   "sizes": [],
+   "details": "",
+   "photo": "photos/D559A914-0B0D-4A6A-A2E5-EBB77D14A929.jpg",
+   "restock": null,
+   "createdAt": "2026-10-29T15:39:35Z"
+  },
+  {
+   "id": "79680BDD-C9C9-47F3-BEB5-916D89510DA4",
+   "name": "кардиган Moncler",
+   "price": 8500,
+   "qty": 1,
+   "sizes": [],
+   "details": "",
+   "photo": "photos/4BFC9D93-AFA7-4333-93D0-73F4BE5C587A.jpg",
+   "restock": null,
+   "createdAt": "2026-10-29T15:53:23Z"
+  },
+  {
+   "id": "F7A0C353-21B2-492E-94DA-A8394728D815",
+   "name": "Maison Margiela white",
+   "price": 10000,
+   "qty": 4,
+   "sizes": [],
+   "details": "",
+   "photo": "photos/1683D66B-9395-4378-82FE-C95A4E6EA26C.jpg",
+   "restock": null,
+   "createdAt": "2026-11-01T11:36:40Z"
+  },
+  {
+   "id": "6479D6BB-560F-44BC-90CC-808EF71ED8A5",
+   "name": "Maison Margiela navy",
+   "price": 11900,
+   "qty": 1,
+   "sizes": [],
+   "details": "",
+   "photo": "photos/920D3E88-1F5D-4A38-9DB4-C0ABFB17C271.jpg",
+   "restock": null,
+   "createdAt": "2026-11-01T11:47:24Z"
+  },
+  {
+   "id": "17808940-D1B0-44CB-98D9-D1EB1FFA1325",
+   "name": "Maison Margiela black",
+   "price": 10500,
+   "qty": 2,
+   "sizes": [],
+   "details": "",
+   "photo": "photos/F23468F7-A3C2-4EBC-BDB7-CAE55E65209A.jpg",
+   "restock": null,
+   "createdAt": "2026-11-03T06:16:42Z"
+  },
+  {
+   "id": "A110E9FC-98BE-4A67-A4A2-E926DA7C8BC9",
+   "name": "Numeris",
+   "price": 5000,
+   "qty": 1,
+   "sizes": [],
+   "details": "",
+   "photo": "photos/49851986-F0CE-472E-A12C-3F1E2E45937C.jpg",
+   "restock": null,
+   "createdAt": "2026-11-11T16:07:21Z"
+  },
+  {
+   "id": "C4CE3FBB-B2CB-40BC-BA55-538A7059862F",
+   "name": "Nimeris",
+   "price": 5000,
+   "qty": 3,
+   "sizes": [],
+   "details": "",
+   "photo": "photos/3B445FB0-A4BA-4A85-B641-B5C7A96D693D.jpg",
+   "restock": null,
+   "createdAt": "2026-11-11T16:08:19Z"
+  },
+  {
+   "id": "D91731F3-A203-46BB-B365-49D67ED3FD2E",
+   "name": "Numeris",
+   "price": 5000,
+   "qty": 1,
+   "sizes": [],
+   "details": "",
+   "photo": "photos/862BE7D4-7290-481A-BA7E-D087947390F1.jpg",
+   "restock": null,
+   "createdAt": "2026-11-11T16:08:57Z"
+  },
+  {
+   "id": "5E6ED2D9-01D9-45F2-9A2A-302AE6C1268C",
+   "name": "Numeris",
+   "price": 5000,
+   "qty": 4,
+   "sizes": [],
+   "details": "",
+   "photo": "photos/A35438A3-2F2C-4714-A96A-9F4230D823A1.jpg",
+   "restock": null,
+   "createdAt": "2026-11-11T16:09:32Z"
+  },
+  {
+   "id": "16DF2FDC-D7DE-4618-A607-58BC1C840319",
+   "name": "сумка LV",
+   "price": 8000,
+   "qty": 1,
+   "sizes": [],
+   "details": "",
+   "photo": "photos/AA680C4D-E71B-4E23-B31B-512D343832FF.jpg",
+   "restock": null,
+   "createdAt": "2026-11-11T16:21:33Z"
+  }
+ ],
+ "upcoming": []
+}

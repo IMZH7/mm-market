@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="color-scheme" content="dark">
+<title>Каталог</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+  :root {
+    --bg: #000;
+    --fg: #fff;
+    --mute: #8a8a8a;
+    --line: #232323;
+    --tile: #0e0e0e;
+    --pad: 16px;
+    --safe-b: env(safe-area-inset-bottom, 0px);
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; background: var(--bg); color: var(--fg); }
+  body {
+    font-family: -apple-system, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px; line-height: 1.35;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: calc(40px + var(--safe-b));
+  }
+  button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+
+  /* Шапка */
+  header { padding: 28px var(--pad) 18px; border-bottom: 1px solid var(--line); }
+  h1 { margin: 0; font-size: 34px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; line-height: 1; }
+  .sub { margin-top: 8px; color: var(--mute); font-size: 13px; }
+  .stats { display: flex; margin-top: 20px; border: 1px solid var(--line); }
+  .stat { flex: 1; padding: 12px 10px; text-align: center; }
+  .stat + .stat { border-left: 1px solid var(--line); }
+  .stat b { display: block; font-size: 20px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .stat span { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--mute); }
+
+  /* Фильтры */
+  nav {
+    position: sticky; top: 0; z-index: 5;
+    display: flex; gap: 8px; padding: 12px var(--pad);
+    background: rgba(0,0,0,.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+    overflow-x: auto; scrollbar-width: none;
+  }
+  nav::-webkit-scrollbar { display: none; }
+  .chip {
+    flex: none; padding: 8px 14px; border: 1px solid var(--line);
+    font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--mute);
+    white-space: nowrap;
+  }
+  .chip.on { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+  .chip i { font-style: normal; opacity: .55; margin-left: 6px; }
+
+  /* Секции и сетка */
+  h2 {
+    margin: 0; padding: 26px var(--pad) 12px;
+    font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--mute);
+    display: flex; justify-content: space-between;
+  }
+  .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--line); border-block: 1px solid var(--line); }
+  @media (min-width: 620px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (min-width: 900px) { .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } body { max-width: 1100px; margin: 0 auto; } }
+  .grid.odd::after { content: ""; background: var(--bg); }
+
+  .card { display: flex; flex-direction: column; justify-content: flex-start; align-items: stretch; height: 100%; width: 100%; text-align: left; background: var(--bg); padding-bottom: 14px; }
+  .ph { position: relative; aspect-ratio: 1 / 1; background: var(--tile); overflow: hidden; }
+  .ph img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0; transition: opacity .3s; }
+  .ph img.ok { opacity: 1; }
+  .ph .none { position: absolute; inset: 0; display: grid; place-items: center; color: #333; font-size: 11px; letter-spacing: .15em; }
+  .card.out .ph img { filter: grayscale(1); opacity: .35; }
+  .tag {
+    position: absolute; left: 0; top: 10px; padding: 4px 8px;
+    font-size: 9px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+    background: var(--fg); color: var(--bg);
+  }
+  .tag.dark { background: var(--bg); color: var(--fg); border: 1px solid var(--fg); border-left: 0; }
+  .body { padding: 10px 12px 0; }
+  .name { font-size: 12px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; min-height: 2.7em; }
+  .price { margin-top: 4px; font-size: 16px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .sizes { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px; }
+  .sz { min-width: 26px; padding: 3px 5px; text-align: center; border: 1px solid #555; font-size: 10px; font-weight: 600; letter-spacing: .04em; }
+  .sz.off { border-color: var(--line); color: #555; text-decoration: line-through; }
+  .sz sup { font-size: 8px; color: var(--mute); margin-left: 2px; }
+  .st { margin-top: 8px; font-size: 11px; color: var(--mute); }
+  .st b { color: var(--fg); font-weight: 600; }
+  .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--fg); margin-right: 6px; vertical-align: 1px; }
+  .dot.o { background: none; border: 1px solid var(--mute); }
+
+  .empty { padding: 60px var(--pad); text-align: center; color: var(--mute); }
+  footer { padding: 28px var(--pad) 0; text-align: center; color: #555; font-size: 11px; letter-spacing: .06em; }
+
+  /* Карточка товара */
+  .sheet { position: fixed; inset: 0; z-index: 20; background: var(--bg); overflow-y: auto; transform: translateY(100%); transition: transform .28s cubic-bezier(.2,.8,.2,1); visibility: hidden; }
+  .sheet.open { transform: none; visibility: visible; }
+  .sheet .big { background: var(--tile); min-height: 60vw; display: grid; place-items: center; }
+  .sheet .big img { width: 100%; max-height: 72vh; object-fit: contain; display: block; }
+  .close { position: fixed; top: 12px; right: 12px; z-index: 21; width: 38px; height: 38px; background: var(--fg); color: var(--bg); font-size: 20px; line-height: 38px; text-align: center; display: none; }
+  .sheet.open ~ .close { display: block; }
+  .info { padding: 20px var(--pad) calc(110px + var(--safe-b)); max-width: 640px; margin: 0 auto; }
+  .info .name { font-size: 20px; font-weight: 800; -webkit-line-clamp: unset; min-height: 0; }
+  .info .price { font-size: 24px; margin-top: 8px; }
+  .desc { margin-top: 16px; font-size: 14px; line-height: 1.5; color: #cfcfcf; white-space: pre-line; overflow-wrap: anywhere; }
+  .row { display: flex; justify-content: space-between; gap: 12px; padding: 14px 0; border-top: 1px solid var(--line); font-size: 13px; }
+  .row:first-of-type { margin-top: 18px; }
+  .row span:first-child { color: var(--mute); letter-spacing: .1em; text-transform: uppercase; font-size: 11px; padding-top: 2px; }
+  .row .sizes { margin: 0; justify-content: flex-end; }
+  .row .sz { font-size: 12px; min-width: 34px; padding: 6px 8px; }
+  .cta { position: fixed; left: 0; right: 0; bottom: 0; padding: 12px var(--pad) calc(12px + var(--safe-b)); background: linear-gradient(transparent, #000 30%); }
+  .cta a { display: block; max-width: 640px; margin: 0 auto; padding: 16px; background: var(--fg); color: var(--bg); text-align: center; text-decoration: none; font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<header>
+  <h1 id="title">Каталог</h1>
+  <div class="sub" id="subtitle"></div>
+  <div class="stats" id="stats"></div>
+</header>
+<nav id="nav"></nav>
+<main id="main"></main>
+<footer id="footer"></footer>
+
+<div class="sheet" id="sheet"></div>
+<button class="close" id="close" aria-label="Закрыть">×</button>
+
+<script>
+const tg = window.Telegram && window.Telegram.WebApp;
+if (tg) {
+  try {
+    tg.ready(); tg.expand();
+    tg.setHeaderColor && tg.setHeaderColor('#000000');
+    tg.setBackgroundColor && tg.setBackgroundColor('#000000');
+  } catch (e) {}
+}
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const MONTHS = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+const fmtDate = iso => { const d = new Date(iso); return d.getDate() + ' ' + MONTHS[d.getMonth()]; };
+const NEW_DAYS = 10;
+
+let DATA = null, filter = 'all', cur = '₽';
+const money = v => Math.round(v).toLocaleString('ru-RU').replace(/ |\s/g, ' ') + ' ' + cur;
+const plural = (n, a, b, c) => { const d = n % 10, h = n % 100; return (d === 1 && h !== 11) ? a : (d >= 2 && d <= 4 && !(h >= 12 && h <= 14)) ? b : c; };
+
+function sizesHtml(sizes, allOff) {
+  if (!sizes || !sizes.length) return '';
+  return '<div class="sizes">' + sizes.map(s => {
+    const off = allOff || s.qty === 0;
+    const q = (!off && s.qty > 0) ? `<sup>${s.qty}</sup>` : '';
+    return `<span class="sz${off ? ' off' : ''}">${esc(s.label)}${q}</span>`;
+  }).join('') + '</div>';
+}
+
+function img(photo, alt) {
+  return photo
+    ? `<img src="${esc(photo)}" alt="${esc(alt)}" loading="lazy" onload="this.classList.add('ok')">`
+    : '<div class="none">НЕТ ФОТО</div>';
+}
+
+function isNew(p) {
+  return p.createdAt && (Date.now() - new Date(p.createdAt)) / 864e5 <= NEW_DAYS;
+}
+
+function statusHtml(p) {
+  if (p.kind === 'upcoming') return `<div class="st"><span class="dot o"></span>Ожидается <b>${fmtDate(p.date)}</b></div>`;
+  if (p.qty > 0) {
+    let s = `<div class="st"><span class="dot"></span>В наличии · <b>${p.qty} шт.</b></div>`;
+    if (p.restock) s += `<div class="st"><span class="dot o"></span>Пополнение <b>${fmtDate(p.restock.date)}</b></div>`;
+    return s;
+  }
+  return p.restock
+    ? `<div class="st"><span class="dot o"></span>Пополнение <b>${fmtDate(p.restock.date)}</b></div>`
+    : '<div class="st"><span class="dot o"></span>Нет в наличии</div>';
+}
+
+function card(p) {
+  const out = p.kind !== 'upcoming' && p.qty === 0;
+  let tag = '';
+  if (p.kind === 'upcoming') tag = '<span class="tag dark">Скоро</span>';
+  else if (out) tag = '<span class="tag dark">Sold out</span>';
+  else if (isNew(p)) tag = '<span class="tag">New</span>';
+  return `<button class="card${out ? ' out' : ''}" data-id="${esc(p.id)}">
+    <div class="ph">${img(p.photo, p.name)}${tag}</div>
+    <div class="body">
+      <div class="name">${esc(p.name)}</div>
+      <div class="price">${p.price ? money(p.price) : '—'}</div>
+      ${sizesHtml(p.sizes, out)}
+      ${statusHtml(p)}
+    </div>
+  </button>`;
+}
+
+function section(title, items) {
+  if (!items.length) return '';
+  const odd = items.length % 2 ? ' odd' : '';
+  return `<h2><span>${title}</span><span>${items.length}</span></h2><div class="grid${odd}">${items.map(card).join('')}</div>`;
+}
+
+function render() {
+  const P = DATA.products.map(p => ({...p, kind: 'product'}));
+  const inStock = P.filter(p => p.qty > 0).sort((a, b) => (b.createdAt || '').localeCompare(a.createdAt || ''));
+  const out = P.filter(p => p.qty === 0);
+  const restock = out.filter(p => p.restock).sort((a, b) => a.restock.date.localeCompare(b.restock.date));
+  const gone = out.filter(p => !p.restock);
+  const upcoming = DATA.upcoming.map(p => ({...p, kind: 'upcoming'}));
+  const soonCount = upcoming.length + P.filter(p => p.restock).length;
+
+  const chips = [
+    ['all', 'Всё', P.length + upcoming.length],
+    ['stock', 'В наличии', inStock.length],
+    ['soon', 'Скоро', soonCount],
+  ];
+  $('nav').innerHTML = chips.map(([k, t, n]) => `<button class="chip${filter === k ? ' on' : ''}" data-f="${k}">${t}<i>${n}</i></button>`).join('');
+
+  let html = '';
+  if (filter === 'all') {
+    html = section('В наличии', inStock) + section('Новые модели · скоро', upcoming) + section('Ждём пополнение', restock) + section('Нет в наличии', gone);
+  } else if (filter === 'stock') {
+    html = section('В наличии', inStock);
+  } else {
+    html = section('Новые модели', upcoming) + section('Пополнение размеров', P.filter(p => p.restock).sort((a, b) => a.restock.date.localeCompare(b.restock.date)));
+    if (!html) html = '<div class="empty">Пока нет запланированных поступлений.<br>Следите за обновлениями в канале.</div>';
+  }
+  $('main').innerHTML = html || '<div class="empty">Здесь пока пусто.</div>';
+
+  const units = inStock.reduce((s, p) => s + p.qty, 0);
+  $('stats').innerHTML = [
+    [inStock.length, plural(inStock.length, 'модель', 'модели', 'моделей')],
+    [soonCount, 'скоро'],
+  ].map(([n, l]) => `<div class="stat"><b>${n}</b><span>${l}</span></div>`).join('');
+}
+
+function find(id) {
+  const p = DATA.products.find(x => x.id === id);
+  if (p) return {...p, kind: 'product'};
+  const u = DATA.upcoming.find(x => x.id === id);
+  return u ? {...u, kind: 'upcoming'} : null;
+}
+
+function openSheet(id) {
+  const p = find(id);
+  if (!p) return;
+  const out = p.kind === 'product' && p.qty === 0;
+  const rows = [];
+  if (p.kind === 'upcoming') rows.push(['Статус', `Новая модель · ожидается ${fmtDate(p.date)}`]);
+  else rows.push(['Наличие', p.qty > 0 ? `${p.qty} шт.` : 'Нет в наличии']);
+  if (p.sizes && p.sizes.length) rows.push(['Размеры', sizesHtml(p.sizes, out)]);
+  if (p.restock) {
+    rows.push(['Пополнение', fmtDate(p.restock.date)]);
+    if (p.restock.sizes && p.restock.sizes.length) rows.push(['Придут размеры', sizesHtml(p.restock.sizes, false)]);
+  }
+  const contact = (DATA.shop.contact || '').replace(/^@|^https?:\/\/t\.me\//, '');
+  const msg = `Здравствуйте! Интересует: ${p.name}${p.price ? ' — ' + money(p.price) : ''}`;
+  const cta = contact
+    ? `<div class="cta"><a href="https://t.me/${encodeURIComponent(contact)}?text=${encodeURIComponent(msg)}" data-tg>${out || p.kind === 'upcoming' ? 'Узнать о поступлении' : 'Написать менеджеру'}</a></div>`
+    : '';
+  $('sheet').innerHTML = `
+    <div class="big">${p.photo ? `<img src="${esc(p.photo)}" alt="${esc(p.name)}">` : ''}</div>
+    <div class="info">
+      <div class="name">${esc(p.name)}</div>
+      <div class="price">${p.price ? money(p.price) : '—'}</div>
+      ${p.details ? `<div class="desc">${esc(p.details)}</div>` : ''}
+      ${rows.map(([k, v]) => `<div class="row"><span>${k}</span><span>${v}</span></div>`).join('')}
+    </div>${cta}`;
+  $('sheet').scrollTop = 0;
+  $('sheet').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  if (tg && tg.BackButton) { try { tg.BackButton.show(); } catch (e) {} }
+  if (tg && tg.HapticFeedback) { try { tg.HapticFeedback.impactOccurred('light'); } catch (e) {} }
+}
+
+function closeSheet() {
+  $('sheet').classList.remove('open');
+  document.body.style.overflow = '';
+  if (tg && tg.BackButton) { try { tg.BackButton.hide(); } catch (e) {} }
+}
+
+document.addEventListener('click', e => {
+  const chip = e.target.closest('.chip');
+  if (chip) { filter = chip.dataset.f; render(); window.scrollTo({top: $('nav').offsetTop, behavior: 'smooth'}); return; }
+  const c = e.target.closest('.card');
+  if (c) { openSheet(c.dataset.id); return; }
+  const a = e.target.closest('a[data-tg]');
+  if (a && tg && tg.openTelegramLink && tg.initData) { e.preventDefault(); tg.openTelegramLink(a.href); }
+});
+$('close').addEventListener('click', closeSheet);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSheet(); });
+if (tg && tg.BackButton) { try { tg.BackButton.onClick(closeSheet); } catch (e) {} }
+
+fetch('catalog.json?v=' + Date.now())
+  .then(r => r.json())
+  .then(d => {
+    DATA = d;
+    cur = d.shop.currency || '₽';
+    $('title').textContent = d.shop.title || 'Каталог';
+    document.title = d.shop.title || 'Каталог';
+    $('subtitle').textContent = d.shop.subtitle || '';
+    $('footer').textContent = 'Обновлено ' + fmtDate(d.updatedAt);
+    render();
+  })
+  .catch(() => { $('main').innerHTML = '<div class="empty">Не удалось загрузить каталог.</div>'; });
+</script>
+</body>
+</html>
