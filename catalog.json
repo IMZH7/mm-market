@@ -5,7 +5,7 @@
   "contact": "ZHELEEZ",
   "currency": "₽"
  },
- "updatedAt": "2026-11-14T10:32:25Z",
+ "updatedAt": "2026-11-16T18:04:08Z",
  "products": [
   {
    "id": "CA017EE5-7047-4A4F-B3C3-C378BA6CEF42",
@@ -72,8 +72,17 @@
    "id": "D96A429A-6019-4AC3-907A-E801542EE963",
    "name": "Valentino браслет",
    "price": 1800,
-   "qty": 3,
-   "sizes": [],
+   "qty": 2,
+   "sizes": [
+    {
+     "label": "ONE",
+     "qty": null
+    },
+    {
+     "label": "SIZE",
+     "qty": null
+    }
+   ],
    "details": "",
    "photo": "photos/8B0B9E57-A5FE-4AEF-ABF7-7FCB56E8599F.jpg",
    "restock": null,
@@ -137,10 +146,15 @@
   {
    "id": "79680BDD-C9C9-47F3-BEB5-916D89510DA4",
    "name": "кардиган Moncler",
-   "price": 8500,
+   "price": 6500,
    "qty": 1,
-   "sizes": [],
-   "details": "",
+   "sizes": [
+    {
+     "label": "M",
+     "qty": null
+    }
+   ],
+   "details": "100% пух,бирки бьются,натуральная шерсть",
    "photo": "photos/4BFC9D93-AFA7-4333-93D0-73F4BE5C587A.jpg",
    "restock": null,
    "createdAt": "2026-10-29T15:53:23Z"
@@ -150,8 +164,17 @@
    "name": "Maison Margiela white",
    "price": 10000,
    "qty": 4,
-   "sizes": [],
-   "details": "",
+   "sizes": [
+    {
+     "label": "41",
+     "qty": null
+    },
+    {
+     "label": "43",
+     "qty": null
+    }
+   ],
+   "details": "100% и натуральная кожа",
    "photo": "photos/1683D66B-9395-4378-82FE-C95A4E6EA26C.jpg",
    "restock": null,
    "createdAt": "2026-11-01T11:36:40Z"
@@ -160,9 +183,14 @@
    "id": "6479D6BB-560F-44BC-90CC-808EF71ED8A5",
    "name": "Maison Margiela navy",
    "price": 11900,
-   "qty": 1,
-   "sizes": [],
-   "details": "",
+   "qty": 2,
+   "sizes": [
+    {
+     "label": "43",
+     "qty": null
+    }
+   ],
+   "details": "100% кожа и натуральная замша",
    "photo": "photos/920D3E88-1F5D-4A38-9DB4-C0ABFB17C271.jpg",
    "restock": null,
    "createdAt": "2026-11-01T11:47:24Z"
@@ -171,9 +199,30 @@
    "id": "17808940-D1B0-44CB-98D9-D1EB1FFA1325",
    "name": "Maison Margiela black",
    "price": 10500,
-   "qty": 2,
-   "sizes": [],
-   "details": "",
+   "qty": 14,
+   "sizes": [
+    {
+     "label": "41",
+     "qty": null
+    },
+    {
+     "label": "42",
+     "qty": null
+    },
+    {
+     "label": "43",
+     "qty": null
+    },
+    {
+     "label": "44",
+     "qty": null
+    },
+    {
+     "label": "45",
+     "qty": null
+    }
+   ],
+   "details": "100% кожа и натуральная замша",
    "photo": "photos/F23468F7-A3C2-4EBC-BDB7-CAE55E65209A.jpg",
    "restock": null,
    "createdAt": "2026-11-03T06:16:42Z"
@@ -191,7 +240,7 @@
   },
   {
    "id": "C4CE3FBB-B2CB-40BC-BA55-538A7059862F",
-   "name": "Nimeris",
+   "name": "Numeris",
    "price": 5000,
    "qty": 3,
    "sizes": [],
@@ -227,11 +276,92 @@
    "name": "сумка LV",
    "price": 8000,
    "qty": 1,
-   "sizes": [],
-   "details": "",
+   "sizes": [
+    {
+     "label": "ONE",
+     "qty": null
+    },
+    {
+     "label": "SIZE",
+     "qty": null
+    }
+   ],
+   "details": "натуральная кожа,аккуратные швы,фурнитура металл",
    "photo": "photos/AA680C4D-E71B-4E23-B31B-512D343832FF.jpg",
    "restock": null,
    "createdAt": "2026-11-11T16:21:33Z"
+  },
+  {
+   "id": "4BA78B3E-F6D4-430A-9B20-FAC5B7C264D8",
+   "name": "Ugg lowmel",
+   "price": 7000,
+   "qty": 4,
+   "sizes": [
+    {
+     "label": "37",
+     "qty": null
+    },
+    {
+     "label": "38",
+     "qty": null
+    },
+    {
+     "label": "39",
+     "qty": null
+    },
+    {
+     "label": "40",
+     "qty": null
+    }
+   ],
+   "details": "100% мех,натуральная замша",
+   "photo": "photos/BF9F5109-E8D4-465E-8E69-1B8B42F73B8E.jpg",
+   "restock": null,
+   "createdAt": "2026-11-16T13:57:47Z"
+  },
+  {
+   "id": "39003117-6988-42A1-B2BA-0D431F1413E8",
+   "name": "Ugg lowmel",
+   "price": 7000,
+   "qty": 4,
+   "sizes": [
+    {
+     "label": "37",
+     "qty": null
+    },
+    {
+     "label": "38",
+     "qty": null
+    },
+    {
+     "label": "39",
+     "qty": null
+    },
+    {
+     "label": "40",
+     "qty": null
+    }
+   ],
+   "details": "100% мех,натуральная замша",
+   "photo": "photos/EFDB898A-0ECA-4CE2-86AF-6F5617B56CE1.jpg",
+   "restock": null,
+   "createdAt": "2026-11-16T14:03:14Z"
+  },
+  {
+   "id": "CB23A36E-D634-4370-A363-A678C5E0603E",
+   "name": "Maison Margiela brown/black",
+   "price": 11900,
+   "qty": 1,
+   "sizes": [
+    {
+     "label": "43",
+     "qty": null
+    }
+   ],
+   "details": "100% кожа и натуральная замша",
+   "photo": "photos/A854B403-95AD-4F76-B2A7-19F1B7E4CC07.jpg",
+   "restock": null,
+   "createdAt": "2026-11-16T14:09:58Z"
   }
  ],
  "upcoming": []
