@@ -5,7 +5,7 @@
   "contact": "ZHELEEZ",
   "currency": "₽"
  },
- "updatedAt": "2026-11-16T18:04:08Z",
+ "updatedAt": "2026-11-17T06:50:57Z",
  "products": [
   {
    "id": "CA017EE5-7047-4A4F-B3C3-C378BA6CEF42",
@@ -62,8 +62,13 @@
    "name": "LV браслет",
    "price": 1800,
    "qty": 9,
-   "sizes": [],
-   "details": "",
+   "sizes": [
+    {
+     "label": "ONE-SIZE",
+     "qty": null
+    }
+   ],
+   "details": "Металл,прочный ремешок",
    "photo": "photos/9FF3A176-D018-48FF-9B1E-120C1C8D0686.jpg",
    "restock": null,
    "createdAt": "2026-10-25T14:53:01Z"
@@ -75,15 +80,11 @@
    "qty": 2,
    "sizes": [
     {
-     "label": "ONE",
-     "qty": null
-    },
-    {
-     "label": "SIZE",
+     "label": "ONE-SIZE",
      "qty": null
     }
    ],
-   "details": "",
+   "details": "Металл,прочная нить",
    "photo": "photos/8B0B9E57-A5FE-4AEF-ABF7-7FCB56E8599F.jpg",
    "restock": null,
    "createdAt": "2026-10-25T14:54:33Z"
@@ -104,8 +105,13 @@
    "name": "поло Carteiz",
    "price": 3500,
    "qty": 1,
-   "sizes": [],
-   "details": "",
+   "sizes": [
+    {
+     "label": "M",
+     "qty": null
+    }
+   ],
+   "details": "трикотаж",
    "photo": "photos/71157C49-4E00-4751-AC37-43C28E1C4B53.jpg",
    "restock": null,
    "createdAt": "2026-10-29T15:35:17Z"
@@ -115,8 +121,13 @@
    "name": "футболка Carteiz",
    "price": 900,
    "qty": 1,
-   "sizes": [],
-   "details": "",
+   "sizes": [
+    {
+     "label": "М",
+     "qty": null
+    }
+   ],
+   "details": "100% хлопок",
    "photo": "photos/45C0FC87-A488-4438-BE39-71200CDD5800.jpg",
    "restock": null,
    "createdAt": "2026-10-29T15:37:09Z"
@@ -126,8 +137,13 @@
    "name": "футболка Carteiz",
    "price": 900,
    "qty": 1,
-   "sizes": [],
-   "details": "",
+   "sizes": [
+    {
+     "label": "М",
+     "qty": null
+    }
+   ],
+   "details": "100% хлопок",
    "photo": "photos/6A0D0CE8-DE45-4040-83DD-B722921FE8DD.jpg",
    "restock": null,
    "createdAt": "2026-10-29T15:38:23Z"
@@ -137,8 +153,13 @@
    "name": "футболка Carteiz",
    "price": 900,
    "qty": 1,
-   "sizes": [],
-   "details": "",
+   "sizes": [
+    {
+     "label": "М",
+     "qty": null
+    }
+   ],
+   "details": "100% хлопок",
    "photo": "photos/D559A914-0B0D-4A6A-A2E5-EBB77D14A929.jpg",
    "restock": null,
    "createdAt": "2026-10-29T15:39:35Z"
@@ -232,8 +253,13 @@
    "name": "Numeris",
    "price": 5000,
    "qty": 1,
-   "sizes": [],
-   "details": "",
+   "sizes": [
+    {
+     "label": "45",
+     "qty": null
+    }
+   ],
+   "details": "Натуральная замша",
    "photo": "photos/49851986-F0CE-472E-A12C-3F1E2E45937C.jpg",
    "restock": null,
    "createdAt": "2026-11-11T16:07:21Z"
@@ -243,8 +269,21 @@
    "name": "Numeris",
    "price": 5000,
    "qty": 3,
-   "sizes": [],
-   "details": "",
+   "sizes": [
+    {
+     "label": "42",
+     "qty": null
+    },
+    {
+     "label": "43",
+     "qty": null
+    },
+    {
+     "label": "45",
+     "qty": null
+    }
+   ],
+   "details": "Натуральная замша",
    "photo": "photos/3B445FB0-A4BA-4A85-B641-B5C7A96D693D.jpg",
    "restock": null,
    "createdAt": "2026-11-11T16:08:19Z"
@@ -254,8 +293,13 @@
    "name": "Numeris",
    "price": 5000,
    "qty": 1,
-   "sizes": [],
-   "details": "",
+   "sizes": [
+    {
+     "label": "43",
+     "qty": null
+    }
+   ],
+   "details": "100% хлопок",
    "photo": "photos/862BE7D4-7290-481A-BA7E-D087947390F1.jpg",
    "restock": null,
    "createdAt": "2026-11-11T16:08:57Z"
@@ -265,8 +309,25 @@
    "name": "Numeris",
    "price": 5000,
    "qty": 4,
-   "sizes": [],
-   "details": "",
+   "sizes": [
+    {
+     "label": "41",
+     "qty": null
+    },
+    {
+     "label": "42",
+     "qty": null
+    },
+    {
+     "label": "43",
+     "qty": null
+    },
+    {
+     "label": "45",
+     "qty": null
+    }
+   ],
+   "details": "Натуральная замша",
    "photo": "photos/A35438A3-2F2C-4714-A96A-9F4230D823A1.jpg",
    "restock": null,
    "createdAt": "2026-11-11T16:09:32Z"
@@ -359,7 +420,7 @@
     }
    ],
    "details": "100% кожа и натуральная замша",
-   "photo": "photos/A854B403-95AD-4F76-B2A7-19F1B7E4CC07.jpg",
+   "photo": "photos/4816C99B-97C6-4AF1-8A78-0AB9D7B286EF.jpg",
    "restock": null,
    "createdAt": "2026-11-16T14:09:58Z"
   }
